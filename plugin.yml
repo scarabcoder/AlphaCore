@@ -1,0 +1,6 @@
+name: AlphaCore
+version: 1.0
+main: com.scarabcoder.alphacore.Main
+commands:
+    money:
+        description: Admin-only eco command
