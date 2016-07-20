@@ -17,6 +17,9 @@ import org.bukkit.scoreboard.ScoreboardManager;
 import com.scarabcoder.alphacore.commands.CommandMoney;
 import com.scarabcoder.alphacore.economy.Economy;
 import com.scarabcoder.alphacore.listeners.CommandListener;
+import com.scarabcoder.alphacore.listeners.DropItemListener;
+import com.scarabcoder.alphacore.listeners.InventoryListener;
+import com.scarabcoder.alphacore.listeners.PlayerJoinListener;
 import com.scarabcoder.alphacore.listeners.RightClickListener;
 import com.scarabcoder.alphacore.listeners.SignPlaceListener;
 
@@ -57,6 +60,9 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new RightClickListener(), this);
 		Bukkit.getPluginManager().registerEvents(new CommandListener(), this);
 		Bukkit.getPluginManager().registerEvents(new SignPlaceListener(), this);
+		Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+		Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
+		Bukkit.getPluginManager().registerEvents(new DropItemListener(), this);
 		
 		List<String> msgs = new ArrayList<String>();
 		msgs.add("You can use coins to buy lobby and ingame items!");
@@ -64,6 +70,7 @@ public class Main extends JavaPlugin {
 		msgs.add("Use /vote to vote for us on server lists to get ingame rewards! (Coming Soon)");
 		msgs.add("You can donate for ingame ranks and coins! (Coming Soon)");
 		msgs.add("Don't forget to check out our streamers' channels!");
+		msgs.add("You can signup for our forums or check out the shop at http://www.alphacentral.net");
 		msgs.add("Join the official Discord channel! https://discord.gg/umH5WUK");
 		Main.getPlugin().saveConfig();
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
